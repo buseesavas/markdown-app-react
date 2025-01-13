@@ -51,4 +51,22 @@ body.dark-mode {
       }
     }
   }
+
+  .dialog-container {
+    background-color: #1D1F22;
+
+    h3 {
+      color: #FFFFFF;
+    }
+
+    p {
+      color: #C1C4CB;
+    }
+    
+  }
+
+  .delete-dialog::backdrop {
+    background-color: rgba(124, 129, 135, 0.5);
+  }
+
 }

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-body, html{
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+body,
+html {
   width: 100%;
   height: 100%;
 }
-
 
 .App {
   width: 100%;
@@ -13,7 +13,6 @@ body, html{
 .header {
   background-color: #2b2d31;
   padding-right: 16px;
-  /* max-height: 72px; */
   max-height: 56px;
   width: 100%;
 }
@@ -25,7 +24,6 @@ body, html{
 .documents {
   display: flex;
   justify-content: space-between;
-  /* height: 72px; */
   height: 56px;
 }
 
@@ -45,19 +43,23 @@ body, html{
   display: flex;
   gap: 7.83px;
   align-items: center;
-  background-color: #E46643;
+  background-color: #e46643;
   padding: 12px;
   border: none;
   border-radius: 4px;
 }
 
 .saveBtn button:hover {
-  background-color: #F39765;
+  background-color: #f39765;
 }
 
 .trash {
-  mix-blend-mode: multiply; 
-    fill: white
+  mix-blend-mode: multiply;
+  fill: white;
+}
+
+.docName {
+  display: none;
 }
 
 h6 {
@@ -71,12 +73,12 @@ h6 {
 .documentNameInput input {
   background-color: transparent;
   border: none;
-  font-family: 'Roboto';
-font-size: 15px;
-font-weight: 400;
-line-height: 17.58px;
-text-align: left;
-color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.58px;
+  text-align: left;
+  color: #ffffff;
 }
 
 .documentNameInput input:focus {
@@ -91,7 +93,6 @@ color: #FFFFFF;
 
 .documentInfo {
   display: flex;
-  /* max-height: 72px; */
   max-height: 56px;
 }
 
@@ -104,27 +105,14 @@ color: #FFFFFF;
   display: flex;
   align-items: center;
   gap: 24px;
-  /* max-height: 72px; */
   max-height: 56px;
 }
-
-/* .saveBtn button {
-  display: flex;
-  align-items: center;
-  gap: 7.83px;
-  color: white;
-  background-color: #e46643;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 16px;
-} büyük ekran*/
 
 .saveBtn button img {
   width: 16px;
 }
 
 .textContent {
-  /* display: flex; */
   width: 100%;
   height: 100%;
 }
@@ -142,7 +130,6 @@ color: #FFFFFF;
   line-height: 24px;
   text-align: left;
   color: #35393f;
-  /* overflow: hidden; */
 }
 
 form {
@@ -168,34 +155,30 @@ form {
 }
 
 .textArea {
-  /* display: none; */
   width: 100%;
   height: 100%;
 }
 
-/* Hamburger Menü */
 .overlay {
-  position: fixed; /* Sabit konum */
+  position: fixed; 
   top: 0;
-  left: -250px; /* Başlangıçta gizli */
+  left: -250px;
   width: 250px;
-  background-color: #1d1f22;
+  background-color: rgba(21, 22, 25, 1);
   min-height: 100vh;
-  transition: transform 0.3s ease; /* Geçiş efekti */
-  z-index: 10; /* Menü üstte */
+  transition: transform 0.3s ease;
+  z-index: 10;
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Sayfa içeriği */
 .App {
-  transition: transform 0.3s ease; /* Sayfa içeriği için geçiş efekti */
+  transition: transform 0.3s ease;
 }
 
-/* Sayfa içeriğini sağa kaydır */
 .App.menuOpen {
-  transform: translateX(250px); /* Sayfa sağa kayar */
+  transform: translateX(250px);
 }
 
 .hamburger-wrapper {
@@ -213,7 +196,7 @@ form {
   cursor: pointer;
   z-index: 20;
   color: white;
-  width: 100%; 
+  width: 100%;
   height: 100%;
 }
 
@@ -246,7 +229,7 @@ form {
 }
 
 .newDocBtn:hover {
-  background-color: #F39765;
+  background-color: #f39765;
 }
 
 .docBtn {
@@ -254,21 +237,6 @@ form {
   align-items: center;
   gap: 16px;
 }
-
-/* .documentName h2 {
-  align-content: center;
-  align-self: center;
-  font-family: "Commissioner";
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 18.35px;
-  letter-spacing: 5px;
-  text-align: left;
-  padding-inline: 29px;
-  color: #ffffff;
-  border-right: 1px solid #5a6069;
-  height: 40px;
-} */
 
 .documentName h2 {
   display: none;
@@ -336,7 +304,6 @@ h3 {
   color: #7c8187;
   background-color: #f5f5f5;
   padding: 12px 16px;
-  
 }
 
 .previewText h3 {
@@ -351,21 +318,21 @@ h3 {
 }
 
 .previewText h6 {
-  color: #E46643;
-font-family: 'Roboto Slab';
-font-size: 14px;
-font-weight: 700;
-line-height: 18.46px;
-text-align: left;
+  color: #e46643;
+  font-family: "Roboto Slab";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18.46px;
+  text-align: left;
 }
 
 .previewText h5 {
-font-family: 'Roboto Slab';
-font-size: 16px;
-font-weight: 700;
-line-height: 21.1px;
-text-align: left;
-color: #35393F;
+  font-family: "Roboto Slab";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.1px;
+  text-align: left;
+  color: #35393f;
 }
 
 .previewText {
@@ -442,9 +409,9 @@ color: #35393F;
 }
 
 .previewText pre {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding: 24px;
-  color: #35393F;
+  color: #35393f;
   border-radius: 4px;
 }
 
@@ -454,15 +421,16 @@ color: #35393F;
 }
 
 .trashBtnIconSvg {
-  color: #7C8187;
+  color: #7c8187;
 }
 
 .trashBtnIconSvg:hover {
-  color: #E46643;
+  color: #e46643;
 }
 
-.eyeIconSvg:hover, .eyeOffIconSvg:hover {
-  color: #E46643;
+.eyeIconSvg:hover,
+.eyeOffIconSvg:hover {
+  color: #e46643;
 }
 
 .saveBtnIconSvg {
@@ -478,7 +446,7 @@ color: #35393F;
 }
 
 .previewArea {
-  display: block; /* Preview her zaman görünür */
+  display: block;
 }
 
 .markdownDesktop {
@@ -504,8 +472,8 @@ color: #35393F;
   height: 40px;
 }
 
-.documentList:hover span {
-  color: #E46643;
+.documentList li:hover span {
+  color: #e46643;
 }
 
 .theme-switch {
@@ -542,25 +510,81 @@ color: #35393F;
 }
 
 .icon-light {
-  color: #fff; /* Açık mod rengi */
+  color: #fff;
 }
 
 .icon-dark {
-  color: #5A6069; /* Koyu mod rengi */
+  color: #5a6069;
+}
+
+.delete-dialog {
+  border: none;
+  margin: auto;
+  max-width: 343px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.delete-dialog::backdrop {
+  background-color: rgba(21, 22, 25, 0.5);
+}
+
+
+.dialog-container {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 4px;
+  font-family: "Roboto Slab";
+
+  h3 {
+    color: #35393f;
+    font-size: 20px;
+    line-height: 26.38px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26.38px;
+    text-align: left;
+  }
+
+  p {
+    color: #7c8187;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.delete-dialog-btn {
+  font-size: 15px;
+  line-height: 17.58px;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #e46643;
+  &:hover {
+    background-color: #f39765;
+  }
 }
 
 @media (width >= 768px) {
-  .previewArea {
-    display: block; /* Preview görünür */
+
+  .docName {
+    display: block;
   }
-  
+
+  .previewArea {
+    display: block; 
+  }
+
   .textArea {
     display: block;
     width: 100%;
   }
 
   .textContent {
-    display: flex; 
+    display: flex;
   }
 
   .markdownDesktop {
@@ -569,12 +593,12 @@ color: #35393F;
 
   .bigScreen {
     display: block;
-font-family: 'Roboto';
-font-size: 15px;
-font-weight: 400;
-line-height: 17.58px;
-text-align: left;
-color: white;
+    font-family: "Roboto";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17.58px;
+    text-align: left;
+    color: white;
   }
 
   .documentName {
@@ -616,14 +640,8 @@ color: white;
   .hamburger-wrapper {
     height: 72px;
   }
-  
+
   .documentList h2 {
     display: none;
   }
-
-  
-}
-
-@media (width >= 1110px) {
-  
 }

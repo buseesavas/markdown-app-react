@@ -1,22 +1,3 @@
-// import { useState } from 'react';
-// import React from 'react';
-// import Header from './header';
-// import { Markdown, Preview } from './MarkDown';
-
-// function App() {
-//   const [previewContent, setPreviewContent] = useState('');
-
-//   return (
-//     <div className="App">
-//       <Header />
-//       <Markdown setPreviewContent={setPreviewContent}/>
-//       <Preview message={previewContent}/>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import { useState, useRef } from "react";
 import Header from "./header";
 import { MarkdownText, Preview } from "./MarkDown";
@@ -29,6 +10,7 @@ function App() {
     localStorage.getItem("darkMode") === "true" ? true : false
   );
   const [documents, setDocuments] = useState(savedDocuments);
+  const [selectedDocument, setSelectedDocument] = useState(null);
   const [previewContent, setPreviewContent] = useState("");
   const [textAreaContent, setTextAreaContent] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,29 +24,29 @@ function App() {
   function handleDocumentClick(doc) {
     setPreviewContent(doc.content);
     setTextAreaContent(doc.content);
+    setSelectedDocument(doc);
   }
 
-  function handleTrashBtn() {
+  function handleTrashBtn(doc) {
     dialogRef.current.showModal();
+    setPreviewContent(doc.content);
   }
 
-  function handleDelete(id) {
-    const updatedDocuments = documents.filter((doc) => doc.id !== id);
+  function handleDelete() {
+    const updatedDocuments = documents.filter((doc) => doc.content !== previewContent); // Belgeyi içerik üzerinden filtreliyoruz
     setDocuments(updatedDocuments);
+    setSelectedDocument(null);
     localStorage.setItem("documents", JSON.stringify(updatedDocuments));
-
-    if (id === documents.find((doc) => doc.content === previewContent)?.id) {
+  
+  
+    if (previewContent) {
       setTextAreaContent("");
       setPreviewContent("");
     }
-    if (updatedDocuments.length !== 0) {
-      setDocuments(updatedDocuments[updatedDocuments.length - 1]);
-    } else {
-      handleNewDocBtn();
-    }
-    dialogRef.current.close();
+  
+    dialogRef.current.close(); 
   }
-
+  
   function handleNewDocBtn() {
     setTextAreaContent("");
     setPreviewContent("");
@@ -87,7 +69,6 @@ function App() {
     setDarkMode(currentDarkMode);
     localStorage.setItem("darkMode", currentDarkMode);
 
-    // Dark mode sınıfını güncelle
     if (currentDarkMode) {
       document.body.classList.add("dark-mode");
     } else {
@@ -103,6 +84,7 @@ function App() {
         setDocuments={setDocuments}
         toggleMenu={toggleMenu}
         handleTrashBtn={handleTrashBtn}
+        selectedDocument={selectedDocument}
       />
       <div className="textContent">
         {isSmallScreen ? (
@@ -199,21 +181,28 @@ function App() {
 }
 
 function DeleteDialog({ dialogRef, handleDelete }) {
+  const handleDialogClick = (e) => {
+    if (e.target === dialogRef.current) {
+      dialogRef.current.close();
+    }
+  };
   return (
-    <dialog ref={dialogRef} className="delete-dialog">
+    <>
+    <dialog ref={dialogRef} className="delete-dialog" onClick={(e) => handleDialogClick(e)}>
       <div className="dialog-container">
         <h3>Delete this document?</h3>
-        <p>Are you sure you want to delete the ‘welcome.md’ document and its contents? This action cannot be reversed.</p>
+        <p>Are you sure you want to delete the document and its contents? This action cannot be reversed.</p>
         <button className="delete-dialog-btn" onClick={handleDelete}>
           Confirm & Delete
         </button>
-        <button className="cancel-dialog-btn" onClick={() => dialogRef.current.close()}>
-          Cancel
-        </button>
       </div>
     </dialog>
+    </>
   );
 }
 
 
+
 export default App;
+
+
