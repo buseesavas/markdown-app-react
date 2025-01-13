@@ -74,7 +74,7 @@ export default function Header({
                   <h6 className="docName">Document Name</h6>
                   <input
                     type="text"
-                    value={selectedDocument.name}
+                    placeholder={selectedDocument.name}
                     onChange={(e) => {
                       const updatedDocument = {
                         ...selectedDocument,
