@@ -89,7 +89,7 @@ This markdown editor allows for inline-code snippets, like this: \`<p>I'm inline
   function handleDelete() {
     const updatedDocuments = documents.filter(
       (doc) => doc.content !== previewContent
-    ); // Belgeyi içerik üzerinden filtreliyoruz
+    ); 
     setDocuments(updatedDocuments);
     setSelectedDocument(null);
     localStorage.setItem("documents", JSON.stringify(updatedDocuments));
@@ -245,16 +245,16 @@ function DeleteDialog({ dialogRef, handleDelete }) {
     <>
       <dialog
         ref={dialogRef}
-        className="delete-dialog"
+        className="deleteDialog"
         onClick={(e) => handleDialogClick(e)}
       >
-        <div className="dialog-container">
+        <div className="dialogContainer">
           <h3>Delete this document?</h3>
           <p>
             Are you sure you want to delete the document and its contents? This
             action cannot be reversed.
           </p>
-          <button className="delete-dialog-btn" onClick={handleDelete}>
+          <button className="deleteDialogBtn" onClick={handleDelete}>
             Confirm & Delete
           </button>
         </div>

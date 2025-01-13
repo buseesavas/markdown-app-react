@@ -518,7 +518,7 @@ h3 {
   color: #5a6069;
 }
 
-.delete-dialog {
+.deleteDialog {
   border: none;
   margin: auto;
   max-width: 343px;
@@ -526,12 +526,12 @@ h3 {
   border-radius: 4px;
 }
 
-.delete-dialog::backdrop {
+.deleteDialog::backdrop {
   background-color: rgba(21, 22, 25, 0.5);
 }
 
 
-.dialog-container {
+.dialogContainer {
   display: grid;
   gap: 16px;
   padding: 24px;
@@ -555,7 +555,7 @@ h3 {
   }
 }
 
-.delete-dialog-btn {
+.deleteDialogBtn {
   font-size: 15px;
   line-height: 17.58px;
   color: #fff;

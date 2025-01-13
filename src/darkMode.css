@@ -52,7 +52,7 @@ body.dark-mode {
     }
   }
 
-  .dialog-container {
+  .dialogContainer {
     background-color: #1D1F22;
 
     h3 {
@@ -65,7 +65,7 @@ body.dark-mode {
     
   }
 
-  .delete-dialog::backdrop {
+  .deleteDialog::backdrop {
     background-color: rgba(124, 129, 135, 0.5);
   }
 
