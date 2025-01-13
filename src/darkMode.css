@@ -1,0 +1,54 @@
+body.dark-mode {
+  background-color: #15161a;
+
+  .previewTitle,
+  .markdownTitle {
+    background-color: #1d1f22;
+  }
+
+  .textArea h3 {
+    background-color: #1d1f22;
+  }
+
+  .markdownTextArea {
+    background-color: #15161a;
+  }
+
+  .markdownTextArea {
+    color: #c1c4cb;
+  }
+
+  .previewText {
+    h1, h2, h3, h4, h5 {
+      color: white;
+    }
+
+    p {
+      color: #C1C4CB;
+    }
+
+    li {
+      color: #C1C4CB;
+    }
+
+    blockquote {
+      background-color: #2B2D31;
+
+      p {
+        color: #FFFFFF;
+      }
+
+      a {
+        color: #FFFFFF;
+      }
+    }
+
+    pre {
+      background-color: #2B2D31;
+
+      code {
+        color: white;
+      }
+    }
+  }
+}
