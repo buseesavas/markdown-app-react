@@ -503,7 +503,7 @@ h3 {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  transition: transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: transform 0.4s ease-out, opacity 0.3s linear;
 }
 
 .switch:checked:after {
