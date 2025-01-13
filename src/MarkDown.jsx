@@ -9,7 +9,6 @@ export function MarkdownText({
   togglePreviewVisibility,
   setTextAreaContent,
 }) {
-  const [textAreaValue, setTextAreaValue] = useState(content);
 
   function handleClick(e) {
     setTextAreaContent(e.target.value);
